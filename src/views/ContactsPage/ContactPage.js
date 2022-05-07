@@ -5,7 +5,7 @@ import ContactList from '../../components/ContactList/ContactList';
 import Filter from "../../components/Filter/Filter"
 //import { nanoid } from 'nanoid'
 import  { Toaster } from 'react-hot-toast';
-import {Container,PhonebookTitle,ContactTitle} from "App.styled"
+import {PhonebookTitle,ContactTitle} from "App.styled"
 //import { useSelector } from 'react-redux';
 //import { itemSelector } from 'redux/contacts-selectors';
 
