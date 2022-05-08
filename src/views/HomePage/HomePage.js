@@ -1,28 +1,37 @@
 import React from 'react';
+import {Container} from "../../App.styled"
 
 const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
   title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+    fontFamily: 'Open Sans',
+  position: "relative",
+  color:" #5C2610",
+  fontSize: "3em",
+  fontWeight: "normal",
+  lineHeight: "1",
+  padding: "10px, 0",
+  margin: "0",
+  display: "inline-block",
+},
+subtitle:{
+  fontFamily: 'Open Sans',
+  color:" #5C2610",
+  fontSize: "2em",
+  fontWeight: "normal",
+  lineHeight: "1",
+  transform: "skew(5deg)",
+
+}}
+
 
 const HomeView = () => (
-  <div style={styles.container}>
+  <Container >
     <h1 style={styles.title}>
-      Приветственная страница нашего сервиса{' '}
-      <span role="img" aria-label="Иконка приветствия">
-        💁‍♀️
-      </span>
-    </h1>
-  </div>
+    Welcome to Phonebook,</h1>
+    <h2 style={styles.subtitle}> your essential phone companion!</h2>
+ 
+  </Container>
 );
 
 export default HomeView;

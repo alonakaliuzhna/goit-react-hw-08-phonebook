@@ -1,38 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {Button} from '@mui/material';
 
-const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
-  activeLink: {
-    color: '#E84A5F',
-  },
-};
 
 export default function AuthNav() {
   return (
+   
     <div>
-      <NavLink
+      <Button component={NavLink}
         to="/register"
         exact ="true"
-        style={styles.link}
-      
-      >
-        Регистрация
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact ="true"
-        style={styles.link}
         
       >
-        Логин
-      </NavLink>
+        Register
+      </Button>
+      <Button component={NavLink}
+    
+        to="/login"
+        exact ="true"
+      >
+        Login
+      </Button>
     </div>
   );
 }

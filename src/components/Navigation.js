@@ -2,38 +2,25 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { authSelectors } from 'redux/auth';
+import {Button} from '@mui/material';
 
-const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
-  activeLink: {
-    color: '#E84A5F',
-  },
-};
 
 const Navigation = () => {
   const isLoggedIn=useSelector(authSelectors.getIsLoggedIn)
 
   return(
   <nav>
-    <NavLink to="/"  exact="true" style={styles.link} >
-      Главная
-    </NavLink>
+    <Button  variant="outlined" component={NavLink} to="/"  exact="true"  >
+      Home
+    </Button>
 
 { isLoggedIn && (
-    <NavLink
+   <Button component={NavLink}
       to="/contacts"
       exact="true"
-      style={styles.link}
-      
     >
-      Заметки
-    </NavLink>
+      Contacts
+    </Button>
 )}
   </nav>
 )};

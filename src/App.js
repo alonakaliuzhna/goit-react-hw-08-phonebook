@@ -1,6 +1,6 @@
 
 import {Container} from "./App.styled"
-import AppBar from './components/AppBar';
+import AppBarComp from './components/AppBar';
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';
@@ -9,6 +9,7 @@ import { authSelectors } from "redux/auth";
 import { useSelector } from "react-redux";
 import PrivateRoute from "./components/Routes/PrivateRoute"
 import PublicRoute from "./components/Routes/PublicRoute"
+
 
 const HomePage = lazy(() => import('./views/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./views/RegisterPage/RegisterPage'));
@@ -23,10 +24,10 @@ export default function App() {
  }, [dispatch]);
 
   return (
-    <Container>
+    <>
       {!isFetchingCurrentUser && (
         <>
-          <AppBar />
+          <AppBarComp />
           <Routes>
      <Route 
      path="/"
@@ -70,6 +71,6 @@ export default function App() {
    </Routes>
    </>
         )}
-    </Container>
+    </>
   );
 }

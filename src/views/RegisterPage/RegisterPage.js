@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
-
+import {RegisterTitle,Main} from "../../App.styled"
+import {TextField,Container,CssBaseline,Box,Grid} from '@mui/material';
 const styles = {
   form: {
     width: 320,
@@ -41,37 +42,58 @@ export default function RegisterPage() {
   };
 
   return (
-    <div>
-      <h1>Страница регистрации</h1>
+    <Main>
+    <Container maxWidth="sm" >
+      <CssBaseline />
+      <Box
+      sx={{
+        display: "flex",
+        alignItems:"center",
+        flexDirection:"column",
+        marginTop:10,
+        
+    
+      }}>
+      <RegisterTitle>Register page</RegisterTitle>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+      <Box  compopent="form"mt={2} onSubmit={handleSubmit} autoComplete="off">
+      <Grid container spacing={2}sx={{display: 'flex',flexDirection: 'column',width: "500px"}} >
+      <Grid item xs={15}   >
+          <TextField required  helperText="Please enter your name"
+          id="demo-helper-text-misaligned"
+          label="Name" type="text" name="name" value={name} onChange={handleChange} />
+        </Grid>
 
-        <label style={styles.label}>
-          Почта
-          <input
+        <Grid item xs={15}>
+          <TextField required 
+          helperText="Please enter your e-mail"
+          id="demo-helper-text-misaligned"
+          label="E-mail"
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-        </label>
+        </Grid>
 
-        <label style={styles.label}>
-          Пароль
-          <input
+        <Grid item xs={15}>
+         
+          <TextField required
+            helperText="Please enter your password"
+          id="demo-helper-text-misaligned"
+          label="Password"
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </Grid>
+        </Grid>
 
         <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+        </Box>
+      </Box>
+    </Container>
+    </Main>
   );
 }
