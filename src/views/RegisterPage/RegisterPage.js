@@ -3,16 +3,7 @@ import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 import {RegisterTitle,Main} from "../../App.styled"
 import {TextField,Container,CssBaseline,Box,Grid} from '@mui/material';
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+
 
 export default function RegisterPage() {
   const dispatch = useDispatch();

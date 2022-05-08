@@ -1,5 +1,4 @@
 
-import {Container} from "./App.styled"
 import AppBarComp from './components/AppBar';
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
