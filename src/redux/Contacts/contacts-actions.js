@@ -13,6 +13,4 @@ import { createAction } from '@reduxjs/toolkit';
 //export const deleteContactsError = createAction('contacts/deleteContactsError');
 
 
-//export const changeFilter = createAction('contacts/changeFilter');
-
 export const changeFilter = createAction('contacts/filter');

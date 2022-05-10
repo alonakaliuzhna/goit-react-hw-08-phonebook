@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from '../../redux/Contacts/contacts-actions';
-import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
+import {TextField} from '@mui/material';
 import contactsSelectors from 'redux/Contacts/contacts-selectors';
 
 export default function Filter () {

@@ -13,7 +13,7 @@ const styles = {
   name: {
     fontWeight: 700,
     marginRight: 12,
-    color: 1976d2,
+   color: "#5C2610"
   },
 };
 
@@ -24,7 +24,7 @@ export default function UserMenu() {
 
   return (
     <div style={styles.container}>
-      <Avatar sx={{m:1,backgroundColor:"#5C2610", width: 25, height: 27}} ></Avatar>
+      <Avatar sx={{m:1,backgroundColor:"#5C2610"}} ></Avatar>
       <span style={styles.name}>Welcome, {name}</span>
       <Button type="button" variant="outlined" onClick={() => dispatch(authOperations.logOut())}>
         Log Out

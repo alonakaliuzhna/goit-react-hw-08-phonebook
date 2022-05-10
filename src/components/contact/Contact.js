@@ -1,7 +1,7 @@
 
 import { ContactItem } from "./Contact.styled";
 
-import {Button,Grid,Box} from '@mui/material';
+import {Button} from '@mui/material';
 import contactsOperation from "../../redux/Contacts/contacts-operation"
 import { useDispatch } from 'react-redux';
 
@@ -18,11 +18,10 @@ function Contact({name,number,id}) {
             variant="outlined" 
              
               type="button"
-              onClick ={() =>  onDeleteContact(id)} >
+              onClick ={() => onDeleteContact(id)} >
               Delete
             </Button>
           </ContactItem>
-      
       
 
     )
