@@ -1,15 +1,23 @@
 import React from 'react';
-import { FilterInput, FilterLabel } from './Filter.styled';
-import { useDispatch } from 'react-redux';
-import { changeFilter } from 'redux/filterSlice';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter } from '../../redux/Contacts/contacts-actions';
+import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
+import contactsSelectors from 'redux/Contacts/contacts-selectors';
 
 export default function Filter () {
 const dispatch=useDispatch();
+const value =useSelector(contactsSelectors.filterSelector)
+
   return(
-<FilterLabel>
-    Find contacts by name
-    <FilterInput type="text"  onChange={event=>dispatch(changeFilter(event.currentTarget.value))} />
-  </FilterLabel>
+  
+    <TextField sx={{width:"455px"}}
+
+    label=" Find contacts by name" type="text"   
+    value={value}
+    onChange={event=>dispatch(changeFilter(event.currentTarget.value))} />
+  
+ 
 );}
 
 

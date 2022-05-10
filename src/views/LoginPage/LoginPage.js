@@ -1,17 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations  from '../../redux/auth/auth-operations';
+import {Main,RegisterTitle} from "../../App.styled"
+import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
 
-const styles = {
-    form: {
-      width: 320,
-    },
-    label: {
-      display: 'flex',
-      flexDirection: 'column',
-      marginBottom: 15,
-    },
-  };
+
   
   export default function LoginPage() {
     const dispatch = useDispatch();
@@ -37,32 +30,59 @@ const styles = {
     };
   
     return (
-      <div>
-        <h1>Страница логина</h1>
+      <Main>
+    <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+      <RegisterTitle>Login page</RegisterTitle>
   
-        <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-          <label style={styles.label}>
-            Почта
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
+      <Box
+      component="form"
+      noValidate
+      onSubmit={handleSubmit}
+      sx={{ mt: 3 }}
+          >
+      <Grid container spacing={2}>
+        <Grid item xs={15}>
+          <TextField required
+            fullWidth
+            helperText="Please enter your name"
+            label="Name"
+            id="demo-helper-text-misaligned"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
             />
-          </label>
+          </Grid>
   
-          <label style={styles.label}>
-            Пароль
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-          </label>
+          <Grid item xs={15} >
+         
+          <TextField required
+            fullWidth
+            helperText="Please enter your password"
+            id="demo-helper-text-misaligned"
+            label="Password"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </Grid>
   
-          <button type="submit">Войти</button>
-        </form>
-      </div>
+          </Grid>
+      
+
+        <Button type="submit"  variant="outlined" sx={{mt:3,mb:2}} fullWidth>Login</Button>
+        </Box>
+      </Box>
+    </Container>
+      </Main>
     );
   }

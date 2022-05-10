@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from "../redux/auth"
+import {Button,Avatar} from '@mui/material';
 
 const styles = {
   container: {
@@ -12,6 +13,7 @@ const styles = {
   name: {
     fontWeight: 700,
     marginRight: 12,
+    color: 1976d2,
   },
 };
 
@@ -22,11 +24,11 @@ export default function UserMenu() {
 
   return (
     <div style={styles.container}>
-      <img src={""} alt="" width="32" style={styles.avatar} />
-      <span style={styles.name}>Добро пожаловать, {name}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Выйти
-      </button>
+      <Avatar sx={{m:1,backgroundColor:"#5C2610", width: 25, height: 27}} ></Avatar>
+      <span style={styles.name}>Welcome, {name}</span>
+      <Button type="button" variant="outlined" onClick={() => dispatch(authOperations.logOut())}>
+        Log Out
+      </Button>
     </div>
   );
 }

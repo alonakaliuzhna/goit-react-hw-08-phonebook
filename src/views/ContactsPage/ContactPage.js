@@ -1,24 +1,40 @@
 import React from 'react';
-
 import ContactForm from "../../components/Form/ContactForm"
 import ContactList from '../../components/ContactList/ContactList';
 import Filter from "../../components/Filter/Filter"
-//import { nanoid } from 'nanoid'
 import  { Toaster } from 'react-hot-toast';
-import {PhonebookTitle,ContactTitle} from "App.styled"
-//import { useSelector } from 'react-redux';
-//import { itemSelector } from 'redux/contacts-selectors';
+import { useDispatch} from 'react-redux';
+import {contactsOperations} from '../../redux/Contacts';
+import { useEffect } from 'react';
+import {Main,RegisterTitle} from "../../App.styled"
+import {Box} from '@mui/material';
+
 
 const ContactPage =() =>{
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(contactsOperations.fetchContacts());
+  }, [dispatch]);
+
+    
     return(
-        <>
-      <PhonebookTitle>PhoneBook</PhonebookTitle>
+        <Main>
+          <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+      <RegisterTitle>PhoneBook</RegisterTitle>
       <ContactForm />
-      <ContactTitle>Contacts</ContactTitle>
+      <RegisterTitle>Contacts</RegisterTitle>
       <Filter/>
-      <ContactList />
+      <ContactList 
+      />
        <Toaster />
-    </>
+       </Box>
+    </Main>
     )
   }
 

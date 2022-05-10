@@ -1,37 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { filterSelector } from '../../redux/contacts-selectors';
 import Contact from "../contact"
-import { useFetchContactsQuery } from '../../redux/contactApi';
+import {TextField,Container,CssBaseline,Box,Grid,Button,Stack} from '@mui/material';
+import contactsSelectors  from '../../redux/Contacts/contacts-selectors';
 import {List} from "./ContactList.styled"
 
-
   export default function ContactList () {
-    const {data:contacts,isFetching}=useFetchContactsQuery();
-    const filter=useSelector(filterSelector);
+
  
-    
+ const filtredContacts =useSelector(contactsSelectors.getVisibleContacts);
 
-  const getFiltredContacts=()=>{
-     return filter
-     ?contacts.filter(({name})=>
-     name.toLowerCase().includes(filter.toLowerCase())
-     )
-     :contacts;
-    }
 
-  const filtredContacts=getFiltredContacts()
 
 return(
     <>
+         <List   >  
+   { filtredContacts.map(({id,name,number }) => (
+   
+   <Contact  key={id} name={name} number={number} id={id}/>
+   ))}
+   </List>  
   
-   {!isFetching && filtredContacts.map(({id,name,number }) => (
-     <List key={id}>
-   <Contact name={name} number={number} id={id}/>
-   </List>
-     ))}
-    
+     
+  
+   
+  
     </>
 );};
 

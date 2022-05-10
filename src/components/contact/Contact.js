@@ -1,22 +1,32 @@
 
-import { ContactButton, ContactItem } from "./Contact.styled";
-import { useDeleteContactMutation } from '../../redux/contactApi';
+import { ContactItem } from "./Contact.styled";
+
+import {Button,Grid,Box} from '@mui/material';
+import contactsOperation from "../../redux/Contacts/contacts-operation"
+import { useDispatch } from 'react-redux';
 
 
 function Contact({name,number,id}) {
-  const [deleteContact,]=useDeleteContactMutation();
+  const dispatch=useDispatch();
+  const onDeleteContact = id => dispatch(contactsOperation.deleteContact(id))
   
      return (
-        <ContactItem key={id}>
-               {name}: {number}
-            <ContactButton
+      <ContactItem key={id}>
+      {name}: {number}
+            <Button
+            sx={{marginLeft:"20px"}}
+            variant="outlined" 
+             
               type="button"
-              onClick ={() => deleteContact(id)} >
+              onClick ={() =>  onDeleteContact(id)} >
               Delete
-            </ContactButton>
+            </Button>
           </ContactItem>
+      
+      
 
     )
 }
 
-export default Contact;
+export default Contact;  
+

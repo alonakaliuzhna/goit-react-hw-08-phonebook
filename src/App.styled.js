@@ -15,11 +15,12 @@ export const Container = styled.div`
   `;
   export const Main=styled.div`
   text-align: center;
-  width: 100%;
   margin: 0 auto;
   padding: 80px;
   background-color:	#ffe6e6;
   height:100vh;
+  max-width:100%;
+ 
   
   `
 

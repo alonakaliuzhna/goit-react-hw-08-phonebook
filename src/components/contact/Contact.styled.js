@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContactItem=styled.li`
 display: flex;
+color: #5C2610;
 justify-content: space-between;
 font-size: 20px;
 font-weight: 700;
