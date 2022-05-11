@@ -52,8 +52,8 @@ import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
         <Grid item xs={15}>
           <TextField required
             fullWidth
-            helperText="Please enter your name"
-            label="Name"
+            helperText="Please enter your email"
+            label="Email"
             id="demo-helper-text-misaligned"
             type="email"
             name="email"
