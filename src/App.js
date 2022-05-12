@@ -1,5 +1,5 @@
-
-import AppBarComp from './components/AppBar';
+import React from "react";
+import  {AppBarComp} from './components/AppBar';
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';

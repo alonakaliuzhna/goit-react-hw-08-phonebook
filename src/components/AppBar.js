@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../redux/auth';
 import AuthNav from './AuthNav';
@@ -7,7 +8,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 
 
-  export default function AppBarComp() {
+  export  function AppBarComp() {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     return (
        <AppBar position="fixed">
