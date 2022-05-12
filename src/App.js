@@ -1,11 +1,11 @@
 import React from "react";
 import  {AppBarComp} from './components/AppBar';
-import { useEffect, Suspense, lazy } from 'react';
+import {  Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {  useDispatch } from 'react-redux';
-import  {authOperations}  from "./redux/auth";
-import { authSelectors } from "./redux/auth";
-import { useSelector } from "react-redux";
+//import {  useDispatch } from 'react-redux';
+//import  {authOperations}  from "./redux/auth";
+//import { authSelectors } from "./redux/auth";
+//import { useSelector } from "react-redux";
 import PrivateRoute from "./components/Routes/PrivateRoute"
 import PublicRoute from "./components/Routes/PublicRoute"
 
@@ -16,18 +16,18 @@ const LoginPage = lazy(() => import('./views/LoginPage/LoginPage'));
 const ContactPage = lazy(() => import('./views/ContactsPage/ContactPage'));
 
 export default function App() {
-  const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+  //const dispatch = useDispatch();
+  //const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
-  useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
+ //useEffect(() => {
+ //  dispatch(authOperations.fetchCurrentUser());
+ //}, [dispatch]);
 
   return (
     <>
        <AppBarComp />
   
-      {!isFetchingCurrentUser && (
+      
           <Routes>
      <Route 
      path="/"
@@ -70,7 +70,7 @@ export default function App() {
       </PrivateRoute>}/>  
    </Routes>
 
-        )}
+        
     </>
   );
 }
