@@ -16,12 +16,14 @@ import storage from 'redux-persist/lib/storage';
 import authSlice from './auth/auth-slice';
 import contactsReducer from './Contacts/contacts-reducer';
 
-const middleware=[...getDefaultMiddleware({
-  serializableCheck: {
-    ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-  },
-}),
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
 ];
+
 
 
 const authConfig = {

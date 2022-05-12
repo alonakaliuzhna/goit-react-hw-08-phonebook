@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations  from '../../redux/auth/auth-operations';
+import {authOperations}  from '../../redux/auth';
 import {Main,RegisterTitle} from "../../App.styled"
-import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
+import {  useSelector } from 'react-redux';
+import { authSelectors } from 'redux/auth';
+import {TextField,Container,CssBaseline,Box,Grid,Button,Alert} from '@mui/material';
 
 
   
@@ -10,6 +12,7 @@ import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const error=useSelector(authSelectors.getError)
   
     const handleChange = ({ target: { name, value } }) => {
       switch (name) {
@@ -80,6 +83,8 @@ import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
       
 
         <Button type="submit"  variant="outlined" sx={{mt:3,mb:2}} fullWidth>Login</Button>
+        {error && 
+        (<Alert severity="error">You are not logged in yet</Alert>)}
         </Box>
       </Box>
     </Container>

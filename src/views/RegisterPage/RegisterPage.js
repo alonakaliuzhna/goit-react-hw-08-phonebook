@@ -1,8 +1,11 @@
 import React,{ useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
+import {authOperations} from '../../redux/auth';
 import {RegisterTitle,Main} from "../../App.styled"
-import {TextField,Container,CssBaseline,Box,Grid,Button,} from '@mui/material';
+import {TextField,Container,CssBaseline,Box,Grid,Button,Alert} from '@mui/material';
+import { authSelectors } from 'redux/auth';
+import {  useSelector } from 'react-redux';
+
 
 
 export default function RegisterPage() {
@@ -10,6 +13,7 @@ export default function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const error=useSelector(authSelectors.getError)
   
     const handleChange = ({ target: { name, value } }) => {
       switch (name) {
@@ -47,7 +51,7 @@ export default function RegisterPage() {
 
       <Box
             component="form"
-            noValidate
+          
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
@@ -89,6 +93,8 @@ export default function RegisterPage() {
         </Grid>
 
         <Button type="submit"  variant="outlined" sx={{mt:3,mb:2}} fullWidth>Register</Button>
+        {error && 
+        (<Alert severity="error">This username is already taken. Please choose another</Alert>)}
         </Box>
       </Box>
     </Container>

@@ -3,7 +3,7 @@ import AppBarComp from './components/AppBar';
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';
-import  authOperations  from "./redux/auth/auth-operations";
+import  {authOperations}  from "./redux/auth";
 import { authSelectors } from "redux/auth";
 import { useSelector } from "react-redux";
 import PrivateRoute from "./components/Routes/PrivateRoute"
