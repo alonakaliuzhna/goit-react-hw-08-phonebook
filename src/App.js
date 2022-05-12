@@ -24,9 +24,10 @@ export default function App() {
 
   return (
     <>
+       <AppBarComp />
       {!isFetchingCurrentUser && (
         <>
-          <AppBarComp />
+       
           <Routes>
      <Route 
      path="/"
