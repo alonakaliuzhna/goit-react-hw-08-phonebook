@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors, authOperations } from "../redux/auth"
+import { authSelectors, authOperations } from "redux/auth"
 import {Button,Avatar} from '@mui/material';
 
 const styles = {
@@ -20,7 +20,6 @@ const styles = {
 export default function UserMenu() {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
- 
 
   return (
     <div style={styles.container}>
