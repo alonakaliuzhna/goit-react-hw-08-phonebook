@@ -26,9 +26,8 @@ export default function App() {
   return (
     <>
        <AppBarComp />
+  
       {!isFetchingCurrentUser && (
-        <>
-      
           <Routes>
      <Route 
      path="/"
@@ -70,7 +69,7 @@ export default function App() {
          </Suspense>
       </PrivateRoute>}/>  
    </Routes>
-   </>
+
         )}
     </>
   );
