@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors, authOperations } from "redux/auth"
+import { authSelectors, authOperations } from "../redux/auth"
 import {Button,Avatar} from '@mui/material';
 
 const styles = {

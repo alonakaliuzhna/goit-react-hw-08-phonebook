@@ -4,7 +4,7 @@ import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';
 import  {authOperations}  from "./redux/auth";
-import { authSelectors } from "redux/auth";
+import { authSelectors } from "./redux/auth";
 import { useSelector } from "react-redux";
 import PrivateRoute from "./components/Routes/PrivateRoute"
 import PublicRoute from "./components/Routes/PublicRoute"
